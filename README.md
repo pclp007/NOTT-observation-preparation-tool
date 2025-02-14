@@ -14,7 +14,12 @@ Below is a tab that displays the SNR maps computed for three different input bea
 ### Acknowledgements
 The NOTT observation preparation tool is a development carried out in the context of the SCIFY project. SCIFY has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation program (grant agreement No 8660).
 
-### Dependencies
+### How to run the app
+
+1. Specify the file path of `config_file` in `NOTT_app_2.py`
+2. The app will open in your default web browser with the following command `streamlit NOTT_app_2.py`
+
+#### Dependencies
 
 [SCIFYsim](https://github.com/SCIFY-IvS/SCIFYsim) 
 [kernuller](https://github.com/rlaugier/kernuller)

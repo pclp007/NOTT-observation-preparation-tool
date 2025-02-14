@@ -12,7 +12,10 @@ Below is a tab that displays the SNR maps computed for three different input bea
 ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/pclp007/NOTT-observation-preparation-tool/blob/main/docs/NOTT_app_3.png)
 
 ### Acknowledgements
-The NOTT observation preparation tool is a development carried out in the context of the SCIFY project. SCIFY has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation program (grant agreement No 8660).
+
+This project was funded by the European Union's Horizon 2020 research and innovation program under grant agreement No. 101004719.
+
+This project has also received support from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation program (grant agreement No 8660).
 
 ### How to run the app
 

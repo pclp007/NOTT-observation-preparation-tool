@@ -20,7 +20,7 @@ This project has also received support from the European Research Council (ERC) 
 ### How to run the app
 
 1. Specify the file path of `config_file` in `NOTT_app_2.py`
-2. The app will open in your default web browser with the following command `streamlit NOTT_app_2.py`
+2. The app will open in your default web browser with the following command `streamlit run NOTT_app_2.py`
 
 #### Dependencies
 

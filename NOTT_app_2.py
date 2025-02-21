@@ -317,13 +317,13 @@ if submit:
          with st.expander("click to read more"):
             st.write("This is a plot of the airmass as a function of time.")
 
-      col1.subheader('target image')
+      #col1.subheader('target image')
 
-      fig, ax = plt.subplots()
+      #fig, ax = plt.subplots()
 
-      plot_finder_image(target_1)
+      #plot_finder_image(target_1)
 
-      col1.pyplot(fig)
+      #col1.pyplot(fig)
 
       with col1:
          with st.expander("click to read more"):
@@ -385,10 +385,11 @@ def get_plot_3(i):
    if option == "AT-small (A0-B2-D0-C1)":
       ax.set_title('A0-C1-D0-B2')
    return fig
-         
+
+
 if star_name:
 
-   notebook_path = os.path.abspath("scify_sim_test.ipynb")
+   notebook_path = os.path.abspath("observability.py")
    config_file = os.path.join(os.path.dirname(notebook_path), "local_config/default_R400.ini")
    asim = makesim(config_file,target=star_name)
    

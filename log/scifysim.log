@@ -20461,3 +20461,124 @@
 2025-02-17 10:57:26,790-WARNING-scifysim.combiner- Comuputed chromatic combiner matrix with the following shape:
 2025-02-17 10:57:26,790-WARNING-scifysim.combiner- (67, 8, 4)
 2025-02-17 10:57:26,790-ERROR-scifysim.director- Correcting with only glass and CO2
+2025-02-20 14:48:51,856-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-20 14:48:51,871-WARNING-scifysim.director- tt_correction not implemented
+2025-02-20 14:48:51,872-WARNING-scifysim.director- no_piston not implemented
+2025-02-20 14:48:51,872-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-20 14:48:51,872-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-20 14:48:55,010-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-20 14:48:55,010-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-20 14:48:55,177-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-20 15:09:59,887-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-20 15:09:59,901-WARNING-scifysim.director- tt_correction not implemented
+2025-02-20 15:09:59,901-WARNING-scifysim.director- no_piston not implemented
+2025-02-20 15:09:59,902-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-20 15:09:59,902-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-20 15:10:02,595-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-20 15:10:02,596-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-20 15:10:02,715-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-20 15:14:22,250-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-20 15:14:22,258-WARNING-scifysim.director- tt_correction not implemented
+2025-02-20 15:14:22,259-WARNING-scifysim.director- no_piston not implemented
+2025-02-20 15:14:22,259-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-20 15:14:22,260-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-20 15:14:24,897-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-20 15:14:24,898-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-20 15:14:25,037-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-20 15:15:23,999-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-20 15:15:24,017-WARNING-scifysim.director- tt_correction not implemented
+2025-02-20 15:15:24,018-WARNING-scifysim.director- no_piston not implemented
+2025-02-20 15:15:24,018-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-20 15:15:24,018-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-20 15:15:27,328-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-20 15:15:27,328-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-20 15:15:27,445-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-21 11:45:42,047-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-21 11:45:42,061-WARNING-scifysim.director- tt_correction not implemented
+2025-02-21 11:45:42,062-WARNING-scifysim.director- no_piston not implemented
+2025-02-21 11:45:42,062-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-21 11:45:42,062-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-21 11:45:45,336-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-21 11:45:45,336-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-21 11:45:45,500-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-21 11:48:41,471-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-21 11:48:41,483-WARNING-scifysim.director- tt_correction not implemented
+2025-02-21 11:48:41,484-WARNING-scifysim.director- no_piston not implemented
+2025-02-21 11:48:41,484-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-21 11:48:41,484-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-21 11:48:44,371-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-21 11:48:44,371-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-21 11:48:44,493-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-21 11:50:49,640-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-21 11:50:49,651-WARNING-scifysim.director- tt_correction not implemented
+2025-02-21 11:50:49,651-WARNING-scifysim.director- no_piston not implemented
+2025-02-21 11:50:49,652-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-21 11:50:49,652-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-21 11:50:52,585-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-21 11:50:52,585-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-21 11:50:52,699-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-21 11:56:29,029-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-21 11:56:29,041-WARNING-scifysim.director- tt_correction not implemented
+2025-02-21 11:56:29,041-WARNING-scifysim.director- no_piston not implemented
+2025-02-21 11:56:29,042-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-21 11:56:29,042-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-21 11:56:31,732-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-21 11:56:31,733-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-21 11:56:31,850-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-21 11:57:16,687-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-21 11:57:16,692-WARNING-scifysim.director- tt_correction not implemented
+2025-02-21 11:57:16,693-WARNING-scifysim.director- no_piston not implemented
+2025-02-21 11:57:16,693-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-21 11:57:16,694-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-21 11:57:19,713-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-21 11:57:19,713-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-21 11:57:19,831-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-21 12:02:40,977-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-21 12:02:40,984-WARNING-scifysim.director- tt_correction not implemented
+2025-02-21 12:02:40,984-WARNING-scifysim.director- no_piston not implemented
+2025-02-21 12:02:40,985-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-21 12:02:40,985-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-21 12:02:44,080-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-21 12:02:44,081-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-21 12:02:44,224-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-21 12:06:09,789-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-21 12:06:09,801-WARNING-scifysim.director- tt_correction not implemented
+2025-02-21 12:06:09,801-WARNING-scifysim.director- no_piston not implemented
+2025-02-21 12:06:09,801-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-21 12:06:09,802-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-21 12:06:12,628-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-21 12:06:12,628-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-21 12:06:12,751-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-21 12:13:22,308-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-21 12:13:22,313-WARNING-scifysim.director- tt_correction not implemented
+2025-02-21 12:13:22,313-WARNING-scifysim.director- no_piston not implemented
+2025-02-21 12:13:22,314-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-21 12:13:22,315-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-21 12:13:25,071-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-21 12:13:25,071-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-21 12:13:25,184-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-21 12:13:25,729-WARNING-scifysim.combiner- Comuputed chromatic combiner matrix with the following shape:
+2025-02-21 12:13:25,730-WARNING-scifysim.combiner- (67, 8, 4)
+2025-02-21 12:13:25,730-ERROR-scifysim.director- Correcting with only glass and CO2
+2025-02-21 12:14:42,778-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-21 12:14:42,784-WARNING-scifysim.director- tt_correction not implemented
+2025-02-21 12:14:42,784-WARNING-scifysim.director- no_piston not implemented
+2025-02-21 12:14:42,784-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-21 12:14:42,785-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-21 12:14:45,790-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-21 12:14:45,790-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-21 12:14:45,910-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-21 12:14:46,321-WARNING-scifysim.combiner- Comuputed chromatic combiner matrix with the following shape:
+2025-02-21 12:14:46,321-WARNING-scifysim.combiner- (67, 8, 4)
+2025-02-21 12:14:46,322-ERROR-scifysim.director- Correcting with only glass and CO2
+2025-02-21 12:22:52,158-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-21 12:22:52,165-WARNING-scifysim.director- tt_correction not implemented
+2025-02-21 12:22:52,165-WARNING-scifysim.director- no_piston not implemented
+2025-02-21 12:22:52,165-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-21 12:22:52,166-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-21 12:22:55,179-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-21 12:22:55,179-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-21 12:22:55,305-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-21 12:22:55,818-WARNING-scifysim.combiner- Comuputed chromatic combiner matrix with the following shape:
+2025-02-21 12:22:55,819-WARNING-scifysim.combiner- (67, 8, 4)
+2025-02-21 12:22:55,819-ERROR-scifysim.director- Correcting with only glass and CO2

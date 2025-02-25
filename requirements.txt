@@ -1,0 +1,3 @@
+git+https://github.com/rlaugier/kernuller
+git+https://github.com/fmartinache/xaosim
+git+https://github.com/rlaugier/SCIFYsim@develop

@@ -349,7 +349,6 @@ def get_plot_1(i):
       ax.set_title('K0-G2-D0-J3')
    if option == "AT-small (A0-B2-D0-C1)":
       ax.set_title('A0-B2-D0-C1')
-   plt.clf
    return fig
 
 @st.cache_data
@@ -368,7 +367,6 @@ def get_plot_2(i):
       ax.set_title('K0-D0-G2-J3')
    if option == "AT-small (A0-B2-D0-C1)":
       ax.set_title('A0-D0-B2-C1')
-   plt.clf
    return fig
 
 @st.cache_data
@@ -387,7 +385,6 @@ def get_plot_3(i):
       ax.set_title('K0-J3-D0-G2')
    if option == "AT-small (A0-B2-D0-C1)":
       ax.set_title('A0-C1-D0-B2')
-   plt.clf
    return fig
 
 
@@ -657,8 +654,8 @@ if star_name:
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
          asim.build_all_maps_dask(mapcrop=0.1)   
-         figs_1 = get_SNR_1()
-         col1.pyplot(figs_1)
+         #figs_1 = get_SNR_1()
+         #col1.pyplot(figs_1)
 
          asim.config.set("configuration", "config", value="VLTI")
          asim.config.set("configuration", "order", value="0,2,1,3")
@@ -667,8 +664,8 @@ if star_name:
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
          asim.build_all_maps_dask(mapcrop=0.1)   
-         figs_2 = get_SNR_2()
-         col2.pyplot(figs_2)
+         #figs_2 = get_SNR_2()
+         #col2.pyplot(figs_2)
 
          asim.config.set("configuration", "config", value="VLTI")
          asim.config.set("configuration", "order", value="0,3,2,1")
@@ -677,8 +674,8 @@ if star_name:
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
          asim.build_all_maps_dask(mapcrop=0.1)   
-         figs_3 = get_SNR_3()
-         col3.pyplot(figs_3)
+         #figs_3 = get_SNR_3()
+         #col3.pyplot(figs_3)
 
 
       if option == "AT-large (AO-G1-J2-K0)":

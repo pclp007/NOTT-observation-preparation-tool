@@ -349,6 +349,7 @@ def get_plot_1(i):
       ax.set_title('K0-G2-D0-J3')
    if option == "AT-small (A0-B2-D0-C1)":
       ax.set_title('A0-B2-D0-C1')
+   plt.clf
    return fig
 
 @st.cache_data
@@ -367,6 +368,7 @@ def get_plot_2(i):
       ax.set_title('K0-D0-G2-J3')
    if option == "AT-small (A0-B2-D0-C1)":
       ax.set_title('A0-D0-B2-C1')
+   plt.clf
    return fig
 
 @st.cache_data
@@ -385,6 +387,7 @@ def get_plot_3(i):
       ax.set_title('K0-J3-D0-G2')
    if option == "AT-small (A0-B2-D0-C1)":
       ax.set_title('A0-C1-D0-B2')
+   plt.clf
    return fig
 
 

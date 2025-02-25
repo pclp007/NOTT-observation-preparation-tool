@@ -20708,3 +20708,24 @@
 2025-02-25 11:46:26,444-WARNING-scifysim.combiner- Comuputed chromatic combiner matrix with the following shape:
 2025-02-25 11:46:26,444-WARNING-scifysim.combiner- (67, 8, 4)
 2025-02-25 11:46:26,444-ERROR-scifysim.director- Correcting with only glass and CO2
+2025-02-25 12:24:39,212-ERROR-scifysim.utilities- Couldn't find the entry in JSDC catalog
+2025-02-25 12:24:39,218-WARNING-scifysim.director- tt_correction not implemented
+2025-02-25 12:24:39,218-WARNING-scifysim.director- no_piston not implemented
+2025-02-25 12:24:39,220-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-25 12:24:39,220-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-25 12:24:41,828-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-25 12:24:41,828-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-25 12:24:41,977-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-25 12:24:42,098-WARNING-scifysim.combiner- Comuputed chromatic combiner matrix with the following shape:
+2025-02-25 12:24:42,098-WARNING-scifysim.combiner- (67, 8, 4)
+2025-02-25 12:24:42,099-ERROR-scifysim.director- Correcting with only glass and CO2
+2025-02-25 12:24:44,303-WARNING-scifysim.director- tt_correction not implemented
+2025-02-25 12:24:44,303-WARNING-scifysim.director- no_piston not implemented
+2025-02-25 12:24:44,304-ERROR-scifysim.injection- Now we use fpath to provide the root for appendix config files
+2025-02-25 12:24:44,304-WARNING-scifysim.injection- Using same file for atmo configuration
+2025-02-25 12:24:46,765-WARNING-scifysim.injection- Loading keyword step_time from [atmo] in fringe_tracking
+2025-02-25 12:24:46,765-WARNING-scifysim.injection- Preparing a fringe tracking residual time series
+2025-02-25 12:24:46,880-WARNING-scifysim.injection- Dry pistons and dispersion residuals scaling refreshed
+2025-02-25 12:24:46,952-WARNING-scifysim.combiner- Comuputed chromatic combiner matrix with the following shape:
+2025-02-25 12:24:46,952-WARNING-scifysim.combiner- (67, 8, 4)
+2025-02-25 12:24:46,952-ERROR-scifysim.director- Correcting with only glass and CO2

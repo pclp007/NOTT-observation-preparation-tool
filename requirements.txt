@@ -4,3 +4,4 @@ git+https://github.com/rlaugier/SCIFYsim@develop
 ipython
 numpy==1.26
 cmcrameri
+plotly

@@ -20,6 +20,8 @@ from cmcrameri import cm
 import plotly
 from astropy import units
 from astroplan.plots import plot_finder_image
+import math
+np.math = math
 
 
 # Disable the submit button after it is clicked 

@@ -20,6 +20,7 @@ from cmcrameri import cm
 import plotly
 from astropy import units
 from astroplan.plots import plot_finder_image
+import dask
 
 
 
@@ -414,6 +415,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_1 = [get_plot_1(i) for i in range(67)]
          col1.pyplot(figs_1[index-1])
+         plt.close(figs_1[index-1])
 
          asim.config.set("configuration", "config", value="VLTI")
          asim.config.set("configuration", "order", value="0,2,1,3")
@@ -424,6 +426,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1)
          figs_2 = [get_plot_2(i) for i in range(67)]
          col2.pyplot(figs_2[index-1])
+         plt.close(figs_2[index-1])
 
          asim.config.set("configuration", "config", value="VLTI")
          asim.config.set("configuration", "order", value="0,3,2,1")
@@ -434,6 +437,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1) 
          figs_3 = [get_plot_3(i) for i in range(67)]
          col3.pyplot(figs_3[index-1])
+         plt.close(figs_3[index-1])
 
       if option == "AT-large (AO-G1-J2-K0)":
 
@@ -446,6 +450,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_1 = [get_plot_1(i) for i in range(67)]
          col1.pyplot(figs_1[index-1])
+         plt.close(figs_1[index-1])
 
          asim.config.set("configuration", "config", value="VLTI_AT_large")
          asim.config.set("configuration", "order", value="0,2,1,3")
@@ -456,6 +461,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1)
          figs_2 = [get_plot_2(i) for i in range(67)]
          col2.pyplot(figs_2[index-1])
+         plt.close(figs_2[index-1])
 
          asim.config.set("configuration", "config", value="VLTI_AT_large")
          asim.config.set("configuration", "order", value="0,3,2,1")
@@ -466,6 +472,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1) 
          figs_3 = [get_plot_3(i) for i in range(67)]
          col3.pyplot(figs_3[index-1])
+         
 
       if option == "AT-medium (K0-G2-D0-J3)":
 
@@ -478,6 +485,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_1 = [get_plot_1(i) for i in range(67)]
          col1.pyplot(figs_1[index-1])
+         plt.close(figs_1[index-1])
 
          asim.config.set("configuration", "config", value="VLTI_AT_medium")
          asim.config.set("configuration", "order", value="0,2,1,3")
@@ -488,6 +496,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1)
          figs_2 = [get_plot_2(i) for i in range(67)]
          col2.pyplot(figs_2[index-1])
+         plt.close(figs_2[index-1])
 
          asim.config.set("configuration", "config", value="VLTI_AT_medium")
          asim.config.set("configuration", "order", value="0,3,2,1")
@@ -510,6 +519,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_1 = [get_plot_1(i) for i in range(67)]
          col1.pyplot(figs_1[index-1])
+         plt.close(figs_1[index-1])
 
          asim.config.set("configuration", "config", value="VLTI_AT_small")
          asim.config.set("configuration", "order", value="0,2,1,3")
@@ -520,6 +530,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1)
          figs_2 = [get_plot_2(i) for i in range(67)]
          col2.pyplot(figs_2[index-1])
+         plt.close(figs_2[index-1])
 
          asim.config.set("configuration", "config", value="VLTI_AT_small")
          asim.config.set("configuration", "order", value="0,3,2,1")
@@ -535,25 +546,16 @@ if star_name:
       with st.expander("click to read more"):
          st.write("NOTT/Double Bracewell throughput maps computed for three different input beam permutations. The order of the UTs/ATs is shown above each map. Taking the difference of nulled output values means that unlike raw photometric-like outputs, these maps can take negative values (shown by the colour scale on the right of the map where the throughput is expressed in units of $m^2/sr$). A white star in each map marks the location of the central star where the transmission, by design, is equal to zero. These maps are computed with [SCIFYsim](%s) - an end-to-end simulator designed for the NOTT instrument, which takes into account the various sources of noise and their correlation." % link)
 
-@st.cache_data
 
+@st.cache_data
 def get_SNR_1():
    
-   a = sf.analysis.BasicETC(asim)
-   thepsig, thenoise, afig = a.show_signal_noise(13., dit=10., T=800., plot=True, show=False)
-   atemp = 800.
-   dit = 10.
-   mysigs = thenoise*units.electron
-   planet_mag = 20.
-
-
    planet_signal_map = (a.planet_photons(planet_mag, dit=dit, T=atemp)[None,:, None,None,None] * asim.gain_map)
    difmap_flux = planet_signal_map[:,:,4,:,:] - planet_signal_map[:,:,3,:,:]
    snr_map = np.sqrt(((difmap_flux[:,:,:,:] / mysigs[None,:,None,None])**2).sum(axis=(0,1)))
 
-
    fig, ax = plt.subplots()
-   im = ax.imshow(snr_map.compute(), cmap="cmc.lajolla", extent=asim.map_extent)
+   im = ax.imshow(np.squeeze(dask.compute(snr_map), axis=0), cmap="cmc.lajolla", extent=asim.map_extent)
    fig.colorbar(im)#, label= 'Throughput $[m^2/sr]$')
    ax.set_xlabel("R.A. coordinate (mas)")
    ax.set_ylabel("Dec. coordinate (mas)")
@@ -571,22 +573,13 @@ def get_SNR_1():
 
 @st.cache_data
 def get_SNR_2():
-   
-   a = sf.analysis.BasicETC(asim)
-   thepsig, thenoise, afig = a.show_signal_noise(13., dit=10., T=800., plot=True, show=False)
-   atemp = 800.
-   dit = 10.
-   mysigs = thenoise*units.electron
-   planet_mag = 20.
-
 
    planet_signal_map = (a.planet_photons(planet_mag, dit=dit, T=atemp)[None,:, None,None,None] * asim.gain_map)
    difmap_flux = planet_signal_map[:,:,4,:,:] - planet_signal_map[:,:,3,:,:]
    snr_map = np.sqrt(((difmap_flux[:,:,:,:] / mysigs[None,:,None,None])**2).sum(axis=(0,1)))
 
-
    fig, ax = plt.subplots()
-   im = ax.imshow(snr_map.compute(), cmap="cmc.lajolla", extent=asim.map_extent)
+   im = ax.imshow(np.squeeze(dask.compute(snr_map), axis=0), cmap="cmc.lajolla", extent=asim.map_extent)
    fig.colorbar(im)#, label= 'Throughput $[m^2/sr]$')
    ax.set_xlabel("R.A. coordinate (mas)")
    ax.set_ylabel("Dec. coordinate (mas)")
@@ -605,21 +598,13 @@ def get_SNR_2():
 @st.cache_data
 def get_SNR_3():
    
-   a = sf.analysis.BasicETC(asim)
-   thepsig, thenoise, afig = a.show_signal_noise(13., dit=10., T=800., plot=True, show=False)
-   atemp = 800.
-   dit = 10.
-   mysigs = thenoise*units.electron
-   planet_mag = 20.
-
-
    planet_signal_map = (a.planet_photons(planet_mag, dit=dit, T=atemp)[None,:, None,None,None] * asim.gain_map)
    difmap_flux = planet_signal_map[:,:,4,:,:] - planet_signal_map[:,:,3,:,:]
    snr_map = np.sqrt(((difmap_flux[:,:,:,:] / mysigs[None,:,None,None])**2).sum(axis=(0,1)))
 
 
    fig, ax = plt.subplots()
-   im = ax.imshow(snr_map.compute(), cmap="cmc.lajolla", extent=asim.map_extent)
+   im = ax.imshow(np.squeeze(dask.compute(snr_map), axis=0), cmap="cmc.lajolla", extent=asim.map_extent)
    fig.colorbar(im)#, label= 'Throughput $[m^2/sr]$')
    ax.set_xlabel("R.A. coordinate (mas)")
    ax.set_ylabel("Dec. coordinate (mas)")
@@ -637,6 +622,13 @@ def get_SNR_3():
 
 
 if star_name:
+
+   a = sf.analysis.BasicETC(asim)
+   thepsig, thenoise, afig = a.show_signal_noise(13., dit=10., T=800., plot=True, show=False)
+   atemp = 800.
+   dit = 10.
+   mysigs = thenoise*units.electron
+   planet_mag = 20.
    
    with tab3:
       
@@ -653,9 +645,10 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+
          asim.build_all_maps_dask(mapcrop=0.1)   
-         #figs_1 = get_SNR_1()
-         #col1.pyplot(figs_1)
+         figs_1 = get_SNR_1()
+         col1.pyplot(figs_1)
 
          asim.config.set("configuration", "config", value="VLTI")
          asim.config.set("configuration", "order", value="0,2,1,3")
@@ -663,9 +656,10 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+
          asim.build_all_maps_dask(mapcrop=0.1)   
-         #figs_2 = get_SNR_2()
-         #col2.pyplot(figs_2)
+         figs_2 = get_SNR_2()
+         col2.pyplot(figs_2)
 
          asim.config.set("configuration", "config", value="VLTI")
          asim.config.set("configuration", "order", value="0,3,2,1")
@@ -673,9 +667,10 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+
          asim.build_all_maps_dask(mapcrop=0.1)   
-         #figs_3 = get_SNR_3()
-         #col3.pyplot(figs_3)
+         figs_3 = get_SNR_3()
+         col3.pyplot(figs_3)
 
 
       if option == "AT-large (AO-G1-J2-K0)":
@@ -688,6 +683,7 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_1 = get_SNR_1()
          col1.pyplot(figs_1)
@@ -698,6 +694,7 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_2 = get_SNR_2()
          col2.pyplot(figs_2)
@@ -708,6 +705,7 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_3 = get_SNR_3()
          col3.pyplot(figs_3)
@@ -722,6 +720,7 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_1 = get_SNR_1()
          col1.pyplot(figs_1)
@@ -732,6 +731,7 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_2 = get_SNR_2()
          col2.pyplot(figs_2)
@@ -742,6 +742,7 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_3 = get_SNR_3()
          col3.pyplot(figs_3)
@@ -756,6 +757,7 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_1 = get_SNR_1()
          col1.pyplot(figs_1)
@@ -766,6 +768,7 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_2 = get_SNR_2()
          col2.pyplot(figs_2)
@@ -776,6 +779,7 @@ if star_name:
          asim.order = asim.obs.order
          asim.array = asim.obs.statlocs
          asim.point(asim.sequence[0], asim.target, disp_override=False, long_disp_override=False,)
+         
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_3 = get_SNR_3()
          col3.pyplot(figs_3)

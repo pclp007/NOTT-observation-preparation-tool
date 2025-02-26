@@ -415,7 +415,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1)   
          figs_1 = [get_plot_1(i) for i in range(67)]
          col1.pyplot(figs_1[index-1])
-         plt.close(figs_1[index-1])
+         plt.close('all')
 
          asim.config.set("configuration", "config", value="VLTI")
          asim.config.set("configuration", "order", value="0,2,1,3")
@@ -426,7 +426,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1)
          figs_2 = [get_plot_2(i) for i in range(67)]
          col2.pyplot(figs_2[index-1])
-         plt.close(figs_2[index-1])
+         plt.close('all')
 
          asim.config.set("configuration", "config", value="VLTI")
          asim.config.set("configuration", "order", value="0,3,2,1")
@@ -437,7 +437,7 @@ if star_name:
          asim.build_all_maps_dask(mapcrop=0.1) 
          figs_3 = [get_plot_3(i) for i in range(67)]
          col3.pyplot(figs_3[index-1])
-         plt.close(figs_3[index-1])
+         plt.close('all')
 
       if option == "AT-large (AO-G1-J2-K0)":
 
